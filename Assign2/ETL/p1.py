@@ -39,7 +39,7 @@ def tranformAgeFromNhisToBrfss(age, ageDict = {1 : (18, 24), 2 : (25, 29), 3 : (
 def tranformRaceFromNhisToBrfss(race):
     MRACBPI2 = int(race[0])
     HISPAN_I = int(race[1])
-    raceMap = {1.0 : (1, 12), 2.0 : (2, 12), 3.0 : ((6, 7, 12), 12), 4.0 : (3, 12), 5.0 : (-1, tuple([i for i in range(12)])), 6.0 : (16, 12)} # -1 : any value will do. This map maps race value from brfss's race column(_IMPRACE) to values in columns of Nhis containit races(MRACBPI2 and HISPAN_I)
+    raceMap = {1.0 : (1, 12), 2.0 : (2, 12), 3.0 : ((6, 7, 12), 12), 4.0 : (3, 12), 5.0 : (-1, tuple([i for i in range(12)])), 6.0 : ((16, 17), 12)} # -1 : any value will do. This map maps race value from brfss's race column(_IMPRACE) to values in columns of Nhis containit races(MRACBPI2 and HISPAN_I)
     if MRACBPI2 is None or HISPAN_I is None:
         return None
     for key in raceMap.keys():
@@ -83,9 +83,16 @@ def calculate_statistics(joined_df):
 
     :return: None
     """
+    for col in joined_df.columns : 
+        if col == "DIBEV1":
+            continue
+        print(col, joined_df.corr(col, "DIBEV1"))
+    # prevalence :
+        # SEX 0.02573150533834265                                                         
+        # AGEG5YR -0.08886811540466527(MOST PROMINENT FACTOR)                                                   
+        # _IMPRACE 0.005466992652457994                                                   
+        # _LLCPWT 0.019439353002873718   
 
-    #add your code here
-    pass
 
 def join_data(brfss_df, nhis_df):
     """
