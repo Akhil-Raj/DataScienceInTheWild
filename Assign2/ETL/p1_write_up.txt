@@ -1,0 +1,13 @@
+A1) Found prevalence(correlation value mentioned to display prevalence) : 
+
+Prevalence of SEX towards DIBEV1                                               
+SEX 0.02573150533834265                                                         
+Prevalence of _AGEG5YR towards DIBEV1
+_AGEG5YR -0.08886811540466527                                                   
+Prevalence of _IMPRACE towards DIBEV1
+_IMPRACE 0.005466992652457994                                                   
+Prevalence of _LLCPWT towards DIBEV1
+_LLCPWT 0.019439353002873718        
+
+A2) 
+

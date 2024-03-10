@@ -86,6 +86,7 @@ def calculate_statistics(joined_df):
     for col in joined_df.columns : 
         if col == "DIBEV1":
             continue
+        print(f"Prevalence of {col} towards DIBEV1")
         print(col, joined_df.corr(col, "DIBEV1"))
     # prevalence :
         # SEX 0.02573150533834265                                                         
